@@ -1,0 +1,29 @@
+<mat-sidenav #sidenav mode="push" class="header-toolbar-hide">
+  <mat-toolbar color="primary">
+    <span>Menú</span>
+    <span class="spacer"></span>
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar>
+
+  <mat-nav-list>
+    @for (item of menuItems(); track $index) {
+    <mat-list-item [routerLink]="item.url" (click)="sidenav.toggle()">
+      <mat-icon matListItemIcon>{{ item.icon }}</mat-icon>
+      {{ item.label }}
+    </mat-list-item>
+    }
+  </mat-nav-list>
+</mat-sidenav>
+
+<mat-toolbar color="primary" class="header-toolbar">
+  <button mat-icon-button (click)="sidenav.toggle()">
+    <mat-icon>menu</mat-icon>
+  </button>
+  <span class="spacer"></span>
+  <mat-slide-toggle
+    [checked]="isDark()"
+    (change)="onChange(!isDark())"
+  ></mat-slide-toggle>
+</mat-toolbar>

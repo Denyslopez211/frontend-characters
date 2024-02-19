@@ -1,0 +1,22 @@
+<div class="flex flex-column mt-3">
+  <mat-form-field>
+    <mat-label>Buscador de personajes</mat-label>
+    <input
+      type="text"
+      matInput
+      [formControl]="searchInput"
+      (input)="searchCharacter()"
+      [matAutocomplete]="auto"
+      (blur)="onBlur()"
+    />
+    <mat-icon matSuffix>search</mat-icon>
+    <mat-autocomplete autoActiveFirstOption #auto="matAutocomplete">
+      @if (listCharacter && listCharacter.length === 0 && searchInput.value &&
+      searchInput.value.length > 0) {
+      <mat-option value=""
+        >No se encontró resultado para {{ searchInput.value }}</mat-option
+      >
+      }
+    </mat-autocomplete>
+  </mat-form-field>
+</div>

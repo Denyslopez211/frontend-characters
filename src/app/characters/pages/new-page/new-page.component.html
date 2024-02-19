@@ -1,0 +1,64 @@
+<app-title [title]="title"></app-title>
+
+<div class="grid mt-5">
+  <div class="col-12 sm:col-6 lg:col-8 xl:col-9">
+    <mat-card>
+      <mat-card-content>
+        <form class="grid" [formGroup]="characterForm" (ngSubmit)="onSubmit()">
+          <mat-form-field class="col-12">
+            <mat-label>Personaje</mat-label>
+            <input matInput type="text" required formControlName="name" />
+            @if (isValidField('name')) {
+            <mat-error>{{ getFieldError("name") }}</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <mat-label>Poder</mat-label>
+            <textarea matInput required formControlName="text"></textarea>
+            @if (isValidField('text')) {
+            <mat-error>{{ getFieldError("text") }}</mat-error>
+            }
+          </mat-form-field>
+          <mat-form-field class="col-12">
+            <mat-label>Url Image</mat-label>
+            <input
+              type="text"
+              matInput
+              formControlName="text"
+              formControlName="img"
+            />
+            @if (isValidField('img')) {
+            <mat-error>{{ getFieldError("img") }}</mat-error>
+            }
+          </mat-form-field>
+        </form>
+        <div class="flex justify-content-between">
+          <button mat-flat-button color="warn" (click)="onCancel()">
+            <mat-icon class="mat-icon-card">cancel</mat-icon>
+            Cancelar
+          </button>
+          <span></span>
+          <button
+            [disabled]="characterForm.invalid"
+            mat-flat-button
+            color="primary"
+            (click)="onSubmit()"
+          >
+            <mat-icon>save</mat-icon>
+            Guardar
+          </button>
+        </div>
+      </mat-card-content>
+    </mat-card>
+  </div>
+
+  <div class="col-12 sm:col-6 lg:col-4 xl:col-3">
+    <mat-card>
+      <img
+        [src]="currentCharacter.img! | img"
+        alt="Imagen del personaje"
+        mat-card-image
+      />
+    </mat-card>
+  </div>
+</div>

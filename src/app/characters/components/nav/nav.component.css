@@ -1,0 +1,9 @@
+.header-toolbar-hide {
+  position: fixed;
+  z-index: 9;
+  width: 250px;
+}
+.header-toolbar {
+  position: fixed;
+  z-index: 2;
+}

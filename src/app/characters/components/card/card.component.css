@@ -1,0 +1,18 @@
+.title_center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card-p {
+  text-align: center;
+  letter-spacing: 1px;
+  line-height: 1.5;
+}
+.mat-icon-card {
+  transform: scale(2) !important;
+  -webkit-transform: scale(2) !important;
+  -moz-transform: scale(2) !important;
+  -ms-transform: scale(2) !important;
+  -o-transform: scale(2) !important;
+}
