@@ -1,5 +1,7 @@
 # Proyecto Angular 17
 
+##### Prueba en producción [aquí](https://aesthetic-gnome-f700d3.netlify.app).
+
 ## Descripción
 
 Este proyecto es un CRUD responsive de tarjetas de personajes, inspirado en el juego de cartas Hearthstone. Utiliza la API de [RapidAPI](https://rapidapi.com/omgvamp/api/hearthstone/) para obtener datos de los personajes. Sin embargo, la aplicación podría adaptarse para mostrar tarjetas de cualquier otro tipo de personaje, como personas, animales, héroes, Pokémon, entre otros.
